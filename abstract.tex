@@ -1,0 +1,61 @@
+
+\documentclass[11pt,reqno]{amsart} % use larger type; default would be 10pt
+\pagestyle{plain}
+\usepackage{multicol}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+%\setlength{\parindent}{0.5cm}
+%\setlength{\textheight}{9.6in}
+%\setlength{\textheight}{7.2in}
+\usepackage[a4paper,left=0.65in,right=0.65in,top=0.7in,bottom=0.7in]{geometry}
+%\usepackage{showframe}
+%\usepackage{geometry}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{float}
+%%% PACKAGES
+%\usepackage{mathtools}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{amsmath}
+\usepackage{bm}
+% These packages are all incorporated in the memoir class to one degree or another...
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Title }
+\author{Author}
+
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+\section{Research Question}
+Discuss things
+\section{Research Method}
+More stuff with an equation
+\begin{equation}
+	\bm{H(q) \ddot{q} + C(q,\dot{q}) \dot{q} + G(q) = B(q) u}
+	\label{eq:std_dyn}
+\end{equation}
+Cite some work \cite{marsden2001}.
+\section{Conclusion}
+Summarize
+\bibliographystyle{amsplain}
+%\bibliography{../../../docs/technical_papers/bibtex/library}
+\bibliography{library.bib}
+
+\end{multicols}
+\end{document}
