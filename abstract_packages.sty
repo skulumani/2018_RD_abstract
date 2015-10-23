@@ -1,0 +1,179 @@
+% custom list of packages to load
+% this is the standard list of packages to use. Can customize and rename this for specific use/templates
+\ProvidesPackage{abstract_packages}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINE USEFUL PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OBSOLETE PACKAGE CHECK
+\RequirePackage[l2tabu,orthodox]{nag}
+
+% -------------------MATH PACKAGES --------------------------------------
+\usepackage[binary-units=true]{siunitx} % SI units
+
+\usepackage{amssymb}  
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[]{algorithm2e}
+\usepackage{theorem}
+\usepackage{bm} % bold face letters in math environment
+\usepackage{setspace} % line spacing  
+\usepackage{booktabs} % for much better looking tables without vertical seperators
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{url}
+
+\usepackage{microtype} % better fonts/apperance
+%----------------------------- GRAPHICS PACKAGES--------------------------
+%\usepackage{geometry} % allows for adjustment of margins/layout of the page
+\usepackage[a4paper,left=0.65in,right=0.65in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\usepackage{float}
+\usepackage{color}
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subcaption} % make it possible to include more than one captioned figure/table in a single float
+\graphicspath{{./figures/}}% path to images
+
+%------------- CITATION PACKAGES------------------------------
+
+%\usepackage{listings}
+%\usepackage{accents}
+%\usepackage{overcite} % reference numbers appear as superscript exponents. Used by AAS
+\usepackage{footnpag}	
+%\usepackage{natbib} % allows for other citation styles (Harvard, APA, MLA, etc)
+\usepackage[]{hyperref} % links to stuff
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitV},    % fits the width of the page to the window
+    pdftitle={},    % title
+    pdfauthor={Shankar Kulumani},     % author
+    pdfsubject={},   % subject of the document
+    pdfcreator={Shankar Kulumani},   % creator of the document
+    pdfproducer={Shankar Kulumani}, % producer of the document
+    pdfkeywords={}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=black           % color of external links
+}
+
+% --------------------------------------
+% MUST BE AFTER HYPERREF!!!!!!!!!
+%------------------------------------------
+\usepackage[noabbrev,capitalize]{cleveref} % get fancy referencing
+
+%\usepackage[final]{showlabels} % show labels for referencing
+
+%\usepackage{refcheck} % check for unused references/labels
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% CUSTOM MACROS
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\linearize}[3]{\ensuremath{\left. \frac{\partial #1}{\partial #2} \right|_{#3} \delta #2}}
+\newcommand{\norm}[1]{\ensuremath{\left\| #1 \right\|}}
+\newcommand{\Real}[1]{\ensuremath{\Re \left\{ #1 \right\}}}
+\newcommand{\bracket}[1]{\ensuremath{\left[ #1 \right]}}
+\newcommand{\braces}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\parenth}[1]{\ensuremath{\left( #1 \right)}}
+\newcommand{\pair}[1]{\ensuremath{\langle #1 \rangle}}
+\newcommand{\met}[1]{\ensuremath{\langle\langle #1 \rangle\rangle}}
+\newcommand{\refeqn}[1]{(\ref{eqn:#1})}
+\newcommand{\reffig}[1]{Fig. \ref{fig:#1}}
+\newcommand{\tr}[1]{\mathrm{tr}\ensuremath{\negthickspace\bracket{#1}}}
+\newcommand{\trs}[1]{\mathrm{tr}\ensuremath{[#1]}}
+\newcommand{\deriv}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+\newcommand{\diff}[2]{\ensuremath{\frac{d #1}{d #2}}}
+\newcommand{\dirDiff}[2]{\ensuremath{\mathbf{D}_{#2} #1 \cdot \delta #2}} % directional derivative
+\newcommand{\SO}{\ensuremath{\mathsf{SO(3)}}}
+\newcommand{\T}{\ensuremath{\mathsf{T}}}
+\renewcommand{\L}{\ensuremath{\mathsf{L}}}
+\newcommand{\so}{\ensuremath{\mathfrak{so}(3)}}
+\newcommand{\SE}{\ensuremath{\mathsf{SE(3)}}}
+\newcommand{\se}{\ensuremath{\mathfrak{se}(3)}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\aSE}[2]{\ensuremath{\begin{bmatrix}#1&#2\\0&1\end{bmatrix}}}
+\newcommand{\ase}[2]{\ensuremath{\begin{bmatrix}#1&#2\\0&0\end{bmatrix}}}
+\newcommand{\D}{\ensuremath{\mathbf{D}}}
+\newcommand{\Sph}{\ensuremath{\mathsf{S}}}
+\renewcommand{\S}{\Sph}
+\newcommand{\J}{\ensuremath{\mathbf{J}}}
+\newcommand{\Ad}{\ensuremath{\mathrm{Ad}}}
+\newcommand{\intp}{\ensuremath{\mathbf{i}}}
+\newcommand{\extd}{\ensuremath{\mathbf{d}}}
+\newcommand{\hor}{\ensuremath{\mathrm{hor}}}
+\newcommand{\ver}{\ensuremath{\mathrm{ver}}}
+\newcommand{\dyn}{\ensuremath{\mathrm{dyn}}}
+\newcommand{\geo}{\ensuremath{\mathrm{geo}}}
+\newcommand{\Q}{\ensuremath{\mathsf{Q}}}
+\newcommand{\G}{\ensuremath{\mathsf{G}}}
+\newcommand{\g}{\ensuremath{\mathfrak{g}}}
+\newcommand{\Hess}{\ensuremath{\mathrm{Hess}}}
+\newcommand{\refprop}[1]{Proposition \ref{prop:#1}}
+\newcommand{\mypaper}{}
+%\theoremstyle{definition} 
+%\newtheorem{prop}{Proposition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MATLAB CODE LISTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\definecolor{listinggray}{gray}{0.9}
+%\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+%\lstset{
+%	%backgroundcolor=\color{lbcolor},
+%	tabsize=4,
+%	rulecolor=,
+%	language=Matlab,
+%        basicstyle=\scriptsize,
+%        %basicstyle = 10pt
+%        upquote=true,
+%        aboveskip={1.5\baselineskip},
+%        columns=fixed,
+%        showstringspaces=false,
+%        extendedchars=true,
+%        breaklines=true,
+%        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+%        %frame=single,
+%        showtabs=false,
+%        showspaces=false,
+%        showstringspaces=false,
+%        identifierstyle=\ttfamily,
+%        keywordstyle=\color[rgb]{0,0,1},
+%        commentstyle=\color[rgb]{0.133,0.545,0.133},
+%        stringstyle=\color[rgb]{0.627,0.126,0.941},
+%}
+
+% command to include matlab code in paper
+%\lstinputlisting[language=Matlab]{../AAE590_PS5_Prob2.m}
+
+
+%% another matlab script code
+%\begin{comment}
+%\usepackage{listings}
+%\lstset{ 
+%        language=Matlab,                                % choose the language of the code
+%%       basicstyle=10pt,                                % the size of the fonts that are used for the code
+%        numbers=left,                                   % where to put the line-numbers
+%        numberstyle=\footnotesize,                      % the size of the fonts that are used for the line-numbers
+%        stepnumber=1,                                           % the step between two line-numbers. If it's 1 each line will be numbered
+%        numbersep=5pt,                                  % how far the line-numbers are from the code
+%%       backgroundcolor=\color{white},          % choose the background color. You must add \usepackage{color}
+%        showspaces=false,                               % show spaces adding particular underscores
+%        showstringspaces=false,                         % underline spaces within strings
+%        showtabs=false,                                         % show tabs within strings adding particular underscores
+%%       frame=single,                                           % adds a frame around the code
+%%       tabsize=2,                                              % sets default tabsize to 2 spaces
+%%       captionpos=b,                                           % sets the caption-position to bottom
+%        breaklines=true,                                        % sets automatic line breaking
+%        breakatwhitespace=false,                        % sets if automatic breaks should only happen at whitespace
+%        escapeinside={\%*}{*)}                          % if you want to add a comment within your code
+%}
+%\end{comment}
