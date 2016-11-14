@@ -52,17 +52,19 @@ We develop the optimal control formulation and apply this method to an example t
 \subsection{Motivation}
 
 The potential for asteroid impact presents one of the largest threats to the future of humanity.
-Interplanetary space, while relatively empty by human standards, Earth is in a ``cosmic shooting gallery''.
-There is a continual bombardment of the Earth by a large range of planetary material, from dust particles to the much less common size of several kilometers or larger.
+Interplanetary space, while relatively empty by human standards, is filled with debris and the Earth is in a ``cosmic shooting gallery''.
+There is a continual bombardment of the Earth by a large range of planetary material.
 This was vividly demonstrated in 2013 by the Chelyabinsk air burst, where a \SIrange{10}{20}{\meter} asteroid exploded over the Russian city of Chelyabinsk on  15 February 2013.
-This event released the equivalent of approximately \SI{590}{\kilo\tonne} of TNT and is one of the few Earth impacts with eyewitness video footage.
+This event released the equivalent of approximately \SI{590}{\kilo\tonne} of TNT and is one of the few Earth impacts with eyewitness testimony.
 In spite of the meteorite exploding at over \SI{100}{\kilo\meter}, the shock wave was powerful enough to knock people off their feet and caused widespread damage to the surrounding area.
 
 It is only a matter of time before a much more devastating body arrives at the Earth.
 As a result, it is imperative to develop spacecraft methodologies to avert any future impact scenarios.
 There is a growing body of research investigating a variety of impact mitigation techniques~\cite{wie2008,pitz2014}.
 A key requirement of these future missions is the ability to effectively design spacecraft trajectories. 
-In addition, a completly new design paradigm is required as the typical methods developed for use around the Earth or other large bodies is not applicable. 
+In addition, a completely new design paradigm is required as the typical methods developed for use around the Earth or other large bodies is not applicable. 
+In this work, we present a systematic design method to design trajectories around these small bodies. 
+This type of work is ideal for future asteroid mitigation missions.
 
 \section{Orbital Transfer Example}
 \begin{figure}[H]
@@ -71,7 +73,7 @@ In addition, a completly new design paradigm is required as the typical methods 
           poincare/.style={opacity=.2,very thick,fill=blue},
           orbit/.style={very thick,black},
           orbit hidden/.style={very thick,dashed},
-          grid/.style={very thin,gray},
+          grid/.style={very thin,black},
           axis/.style={->,blue,thick},
           reachability/.style={thick,blue}, scale=0.6]
 
@@ -116,7 +118,7 @@ In addition, a completly new design paradigm is required as the typical methods 
 \end{figure}
 We utilize the concept of a reachability set to design our transfer trajectories.
 \Cref{fig:reachability_set} illustrates this methodology.
-Without any control input, the trajectories will follow the system dynamics, \( \psi(t, \vecbf{x}_0 ) \) and intersect the \Poincare section at \( \vecbf{x}_n\).
+Without any control input, the trajectories will follow the system dynamics and intersect the \Poincare section at \( \vecbf{x}_0 = \vecbf{x}_n\).
 The addition of a control input allows the spacecraft to depart from the natural dynamics and intersect the section at another location denoted by the dashed circle.
 We use the cost function \( J \) to define a distance metric on the \Poincare section.
 Maximization of \( J \), or the minimization of \( -J \), along various directions, which are parameterized using \( \phi_d \), on the \Poincare section allows us to generate the largest reachability set under the bounded control input.
@@ -140,7 +142,7 @@ This type of scenario would occur frequently during mapping and observation miss
 
 We can see in~\cref{fig:transfer_3d} that this transfer requires four iterations of the reachable set computation. 
 Each reachability set progressively approaches the target periodic orbit.
-The final computation intersects the target periodic orbit on our chosen \Poincare section and allows for a complete orbital transfer between the periodic orbits. 
+The final computation intersects the target periodic orbit on our chosen \Poincare section and allows for a complete orbital transfer between the two orbits of 4769 Castalia.
 
 \bibliographystyle{amsplain}
 \bibliography{library.bib}
