@@ -72,14 +72,14 @@ This type of work is ideal for future asteroid mitigation missions.
 
 \section{Orbital Transfer Example}
 \begin{figure}[H]
-\begin{scaletikzpicturetowidth}{0.2\columnwidth}
+\begin{scaletikzpicturetowidth}{0.1\columnwidth}
     \begin{tikzpicture}[tdplot_main_coords,
           poincare/.style={opacity=.2,very thick,fill=blue},
           orbit/.style={very thick,black},
           orbit hidden/.style={very thick,dashed},
           grid/.style={very thin,black},
           axis/.style={->,blue,thick},
-          reachability/.style={thick,blue}, scale=0.6]
+          reachability/.style={thick,blue}, scale=0.4]
 
         % nodes for the poincare section
         \node[label=above:\(\Sigma\)] (upper_right) at (0,5,5) {};
@@ -134,7 +134,7 @@ We model the thruster of the spacecraft as a generic acceleration vector in the 
 The acceleration magnitude is chosen to emulate a physically realizable thruster system, such as those found on many operational ion or hall effect thrusters~\cite{goebel2008,choueiri2009}.
 \begin{figure}[H]
     % \centering 
-    \includegraphics[width=\columnwidth,height=\columnwidth,keepaspectratio]{figures/trajectory_3d.pdf} 
+    \includegraphics[width=0.5\columnwidth,height=\columnwidth,keepaspectratio]{figures/trajectory_3d.pdf} 
     \caption{Transfer Trajectory}
     \label{fig:transfer_3d} 
 \end{figure}
