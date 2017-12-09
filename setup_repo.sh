@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # add the correct remote repositories
-git_repo="git@github.com:skulumani/2017_RD_Abstract.git"
-bb_repo="git@bitbucket.org:shankarkulumani/2017_rd_abstract.git"
+git_repo="git@github.com:skulumani/2018_RD_Abstract.git"
+bb_repo="git@bitbucket.org:shankarkulumani/2018_rd_abstract.git"
 
 printf "Setting the origin remote to point to Github and Bitbucket:\n\n"
 printf "Github: $git_repo\n"
