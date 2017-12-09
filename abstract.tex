@@ -46,22 +46,47 @@ Computing the shape of the asteroid on a continual basis avoids the long delay a
 Furthermore, the updated gravitional model enables a spacecraft to autonomously transition from a mapping orbit, directly to landing.
 
 \subsection*{Mathematical Formulation}\label{se:mathematical_problem}
-In this paper, we consider the motion of a dumbbell model of a spacecraft about an asteroid.
+The gravitational potential around a constant density asteroid can be defined entirely from its shape.
+We model the asteroid shape as a set of vertices and triangular faces.
+Given this shape the potential at any point around the asteroid is defined as
+\begin{align}\label{eq:potential}
+    U(\vecbf{r}) &= \frac{1}{2} G \sigma \sum_{e \in \text{edges}} \vecbf{r}_e \cdot \vecbf{E}_e \cdot \vecbf{r}_e \cdot L_e \nonumber\\
+                 &- \frac{1}{2}G \sigma \sum_{f \in \text{faces}} \vecbf{r}_f \cdot \vecbf{F}_f \cdot \vecbf{r}_f \cdot \omega_f \in \R^1,
+\end{align}
+In this work, we consider the motion of a dumbbell model of a spacecraft about an asteroid.
 The dumbbell spacecraft consists of two masses connected by a massless rod and is a well-known representation of a multi body spacecraft.
 Furthermore, the dumbbell model captures the important interactions of the coupling between orbital and attitude dynamics. 
-The gravitational potential around an asteroid can be defined entirely from its shape.
-We make the assumption that the density of the asteroid is constant and the shape is defined in terms of a set of vertices and triangular faces of the asteroid.
-
 
 \subsection*{Technical Approach}
 
-Determine the shape of the asteroid
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth,trim={50mm 30mm 50mm 30mm},clip]{figures/itokawa_blender.png}
+    \caption{Realistic rendering of Itokawa}
+\end{figure}
 
-Simulate a depth sensor around the asteroid
+Prior to the arrival at the asteroid, it is only possible to determine a coarse ellipsoidal approximation of the shape of an asteroid from ground based measurements. 
+As a result, the dynamic model of the gravitational environment will be inaccurate until the shape of the asteoriod is determined. 
+We simulate measurements of the surface using a laser range finder mounted on the spacecraft.
+A laser depth sensor, or LIDAR, provides the distance to the surface by measuring the round trip time of flight of reflections from the surface.
+We simulate the measurements of the surface using an efficient ray casting technique based on a modified binary space partition tree~\cite{formella1995}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/raycasting.png}
+    \caption{Ray Casting example around Itokawa\label{fig:raycasting}}
+\end{figure}
+\Cref{fig:raycasting} shows an example of ray casting to determine depth measurements of the surface of asteroid Itokawa.
+The rays from the spacecraft to the asteroid are shown in red, while the measurements of the surface are shown in yellow.
+By combining many measurements of the surface a  point cloud representation of the asteroid is generated.
 
-Using the depth measurements to create a shape model
-
-Shape model allows for the definition of the gravity field
+The shape of the asteroid is computed in near real time instead of requiring ground based computation.
+This allows for a much larger class of missions and removes the need for the spacecraft to remain in a mapping specific orbit for long periods of time.
+Instead, the spacecraft is able to autonomously compute the shape while maneuvering.
+The final step is to reconstruct the shape of the asteroid from the depth measurements~\cite{hoppe1992}.
+\subsubsection*{Contribution}
+We will simultaneously derive the shape of the asteroid while maneuvering.
+This alleviates the long and labor intensive efforts to determine the shape in a specific mapping orbit.
+Instead, our approach allows for online shape generation and enables for responsive and short duration missions to the asteroid surface.
 \bibliographystyle{plain}
 \bibliography{library.bib}
 
