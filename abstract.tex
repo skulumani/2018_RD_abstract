@@ -42,25 +42,16 @@ In addition, we utilize a polyhedron potential model to represent the shape of t
 In order to determine the shape of the asteroid, we model a laser ranging sensor (LIDAR) on a maneuvering spacecraft.
 The LIDAR is able to provide depth measurements of the surface of the asteroid.
 Given a set of depth measurements it is possible to compute the shape, and hence gravitational potential of the asteroid.
-
-In short, this paper presents a nonlinear controller for the coupled motion of a spacecraft around an asteroid.
-The dynamics are developed on the nonlinear manifold of rigid body motions, namely the special euclidean group.
-This intrinsic geometric formulation accurately captures the coupling between the orbit and attitude dynamics. 
-Due to the relative size of the spacecraft as compared to the orbital radius, there is a significant gravitational moment on the spacecraft. 
-Through the use of the polyhedron gravitational model we ensure an accurate representation of the gravitational moment on the spacecraft throughout all phases of flight. 
-Furthermore, we present a nonlinear controller developed on the special euclidean group which asymptotically tracks a desired landing trajectory. 
+Computing the shape of the asteroid on a continual basis avoids the long delay and computational complexity of current asteroid operations.
+Furthermore, the updated gravitional model enables a spacecraft to autonomously transition from a mapping orbit, directly to landing.
 
 \subsection*{Mathematical Formulation}\label{se:mathematical_problem}
-In this paper, we consider the landing of a dumbbell model of a spacecraft onto an asteroid.
+In this paper, we consider the motion of a dumbbell model of a spacecraft about an asteroid.
 The dumbbell spacecraft consists of two masses connected by a massless rod and is a well-known representation of a multi body spacecraft.
 Furthermore, the dumbbell model captures the important interactions of the coupling between orbital and attitude dynamics. 
-As a result, this simple model is useful to capture the main characteristics of a wide variety of spacecraft configurations.
-Typically, spacecraft have mass concentrated in a central structure, referred to as the bus, which houses the command and control system, actuators, fuel, sensors etc. 
-In addition, comparatively light-weight solar panels extend from the bus to provide electrical energy from solar radiation. 
-As a result, the distributed mass of the spacecraft is captured with the dumbbell representation.
-In this section, we briefly review the polyhedron potential model and then present the derivation of the coupled dynamics of a dumbbell spacecraft about an asteroid.
+The gravitational potential around an asteroid can be defined entirely from its shape.
+We make the assumption that the density of the asteroid is constant and the shape is defined in terms of a set of vertices and triangular faces of the asteroid.
 
-Can define the gravity field given only the shape of the asteroid
 
 \subsection*{Technical Approach}
 
