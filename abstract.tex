@@ -9,7 +9,7 @@
 \renewcommand{\thesection}{\Roman{section}} 
 \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
 
-\title{Simultaneous landing and mapping on Asteroid Itokawa}
+\title{Simultaneous landing and mapping for Near Earth Asteroids}
 \author{Shankar Kulumani}
 % \thanks{PhD Candidate, Department of Mechanical and Aerospace Engineering, Email:~\href{mailto:skulumani@gwu.edu}{skulumani@gwu.edu}}
 
@@ -43,7 +43,7 @@ In order to determine the shape of the asteroid, we model a laser ranging sensor
 The LIDAR is able to provide depth measurements of the surface of the asteroid.
 Given a set of depth measurements it is possible to compute the shape, and hence gravitational potential of the asteroid.
 Computing the shape of the asteroid on a continual basis avoids the long delay and computational complexity of current asteroid operations.
-Furthermore, the updated gravitional model enables a spacecraft to autonomously transition from a mapping orbit, directly to landing.
+Furthermore, the updated gravitational model enables a spacecraft to autonomously transition from a mapping orbit, directly to landing.
 
 \subsection*{Mathematical Formulation}\label{se:mathematical_problem}
 The gravitational potential around a constant density asteroid can be defined entirely from its shape.
@@ -66,7 +66,7 @@ Furthermore, the dumbbell model captures the important interactions of the coupl
 \end{figure}
 
 Prior to the arrival at the asteroid, it is only possible to determine a coarse ellipsoidal approximation of the shape of an asteroid from ground based measurements. 
-As a result, the dynamic model of the gravitational environment will be inaccurate until the shape of the asteoriod is determined. 
+As a result, the dynamic model of the gravitational environment will be inaccurate until the shape of the asteroid is determined. 
 We simulate measurements of the surface using a laser range finder mounted on the spacecraft.
 A laser depth sensor, or LIDAR, provides the distance to the surface by measuring the round trip time of flight of reflections from the surface.
 We simulate the measurements of the surface using an efficient ray casting technique based on a modified binary space partition tree~\cite{formella1995}.
