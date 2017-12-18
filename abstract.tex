@@ -9,7 +9,7 @@
 \renewcommand{\thesection}{\Roman{section}} 
 \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
 
-\title{Simultaneous landing and mapping for Near Earth Asteroids}
+\title{Real Time Shape Reconstruction for Near Earth Asteroid Landing}
 \author{Shankar Kulumani}
 % \thanks{PhD Candidate, Department of Mechanical and Aerospace Engineering, Email:~\href{mailto:skulumani@gwu.edu}{skulumani@gwu.edu}}
 
@@ -33,7 +33,7 @@ In spite of the significant interest in asteroid deflection, and the extensive r
 
 \subsubsection*{Research Question}
 % describe our approach in this paper
-In this work, we develop a orbit and landing scheme for spacecraft on an asteroid.
+In this work, we develop an orbit and landing scheme for spacecraft onto an asteroid.
 The main objective is to construct the coupled equations of motion of a rigid spacecraft about an asteroid.
 This accurate dynamic model is then used to derive a nonlinear controller for the tracking of a landing trajectory.
 In contrast to much of the previous work, we explicitly consider the gravitational coupling between the orbit and attitude dynamics.
@@ -43,15 +43,15 @@ In order to determine the shape of the asteroid, we model a laser ranging sensor
 The LIDAR is able to provide depth measurements of the surface of the asteroid.
 Given a set of depth measurements it is possible to compute the shape, and hence gravitational potential of the asteroid.
 Computing the shape of the asteroid on a continual basis avoids the long delay and computational complexity of current asteroid operations.
-Furthermore, the updated gravitational model enables a spacecraft to autonomously transition from a mapping orbit, directly to landing.
+Furthermore, the updated gravitational model enables a spacecraft to autonomously transition from a mapping orbit directly to landing.
 
 \subsection*{Mathematical Formulation}\label{se:mathematical_problem}
 The gravitational potential around a constant density asteroid can be defined entirely from its shape.
 We model the asteroid shape as a set of vertices and triangular faces.
-Given this shape the potential at any point around the asteroid is defined as
+Given this shape, the potential at any point around the asteroid is defined as
 \begin{align}\label{eq:potential}
     U(\vecbf{r}) &= \frac{1}{2} G \sigma \sum_{e \in \text{edges}} \vecbf{r}_e \cdot \vecbf{E}_e \cdot \vecbf{r}_e \cdot L_e \nonumber\\
-                 &- \frac{1}{2}G \sigma \sum_{f \in \text{faces}} \vecbf{r}_f \cdot \vecbf{F}_f \cdot \vecbf{r}_f \cdot \omega_f \in \R^1,
+                 &- \frac{1}{2}G \sigma \sum_{f \in \text{faces}} \vecbf{r}_f \cdot \vecbf{F}_f \cdot \vecbf{r}_f \cdot \omega_f \in \R^1.
 \end{align}
 In this work, we consider the motion of a dumbbell model of a spacecraft about an asteroid.
 The dumbbell spacecraft consists of two masses connected by a massless rod and is a well-known representation of a multi body spacecraft.
